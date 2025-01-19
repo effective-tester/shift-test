@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 @Configuration
-public class OptionConfig {
+public class CommandConfig {
 
   @Bean
   public Map<String, BiConsumer<Claim, String>> valueOptions() {
