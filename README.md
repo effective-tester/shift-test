@@ -1,0 +1,74 @@
+# FileFilterApp
+
+**FileFilterApp** — приложение на базе Spring Boot, предоставляющее функциональность фильтрации файлов, согласно ТЗ.
+
+## Особенности реализации
+
+- Выбирается **последняя** опция в случае, если выбраны несколько одинаковых опций, или они противоречат друг другу по смыслу (например, `-s` и `-f`)
+- Используется **AOP** для создания точки отлова ошибок.
+- Используется **Lombok** для уменьшения количества кода.
+
+## Требования
+
+### Система сборки
+- Для сборки проекта используется **Gradle** версии 8.0.
+
+### Сторонние библиотеки
+
+Проект использует следующие зависимости:
+
+1. **Spring Boot Starter**
+    - Версия: 3.1.2
+    - Зависимость:
+   ```groovy
+   implementation 'org.springframework.boot:spring-boot-starter'
+   ```
+
+2. **Spring Boot Starter AOP**
+    - Версия: 3.1.2
+    - Зависимость:
+   ```groovy
+   implementation 'org.springframework.boot:spring-boot-starter-aop'
+   ```
+
+3. **Lombok**
+    - Версия: 1.18.20
+    - Зависимость:
+   ```groovy
+   implementation 'org.projectlombok:lombok:1.18.20'
+   annotationProcessor 'org.projectlombok:lombok:1.18.20'
+   ```
+
+## Установка и запуск
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/your-username/FileFilterApp.git
+   ```
+
+2. Откройте папку с проектом и выполните сборку с помощью Gradle:
+   ```bash
+   gradle build
+   ```
+
+3. После сборки можно запустить приложение с помощью следующей команды:
+   ```bash
+   java -jar build/libs/filefilterapp-1.0.0.jar
+   ```
+
+   Либо, если вы не хотите собирать проект вручную, можно воспользоваться уже готовым jar-файлом:
+   ```bash
+   java -jar filefilterapp-1.0.0.jar
+   ```
+
+
+## Примеры
+1)
+   ```bash
+   java -jar filefilterapp-1.0.0.jar -s -a -f -o .\some\dir -p test- in1.txt C:\Users\kochachi/shift/test/in4.txt
+   ```
+2)
+   ```bash
+   gradle build 
+   java -jar filefilterapp/build\libs\filefilterapp-1.0.0.jar -s -a -f -o .\some\dir -p test- in1.txt C:\Users\kochachi/shift/test/in4.txt
+      ```

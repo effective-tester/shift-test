@@ -1,0 +1,3 @@
+rootProject.name = 'shift-test'
+include 'filefilterapp'
+
