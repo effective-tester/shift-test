@@ -45,6 +45,8 @@
    ```bash
    git clone https://github.com/effective-tester/shift-test.git
    ```
+   или скачайте архив и распакуйте его
+
 
 2. Откройте папку с проектом и выполните сборку:
    ```bash
